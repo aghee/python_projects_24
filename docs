@@ -1,2 +1,29 @@
 #Customized simple explanations collected as i learn python
 _init_() method -python calls this method by default everytime you create an object, it creates space in computer memory for the object
+Any time a .py file is run and interpreted, certain variables are set up and linked with the file. 
+This includes __main__ environment variable, which is assigned as the file’s __name__ variable.
+File methods in python
+.close() Allows the user to close an open file within the IDE
+.read() Allows the user to read the contents of an open file and return the number of associated bytes
+.readline() Returns the first line of content from an open file
+.remove() Allows the user to delete a file if it exists
+.rmdir() Allows the user to delete a folder if it exists
+.seek() Allows the user to move the location of the file handle's reference point within an open file from one place to another.
+.truncate() Allows the user to resize the file to a given number of bytes when the file is accessed through the append mode
+.unlink() Allows the user to delete a file path if it exists.
+.writable() Allows the user to check if a file is writable or not. 
+The function will return True if the file is writable and accessed in append or write mode, and False if it was accessed in read mode.
+.write() Adds additional text to a file when the file is opened in append mode.
+file = open("myfile.txt", "w") #plaintext file named myfile.txt is created and opened in the write mode
+sep='_' sep='/' The separator between the arguments to print() function in Python is space by default,
+which can be modified and can be made to any character, integer or string as per your choice.The 'sep' parameter is used to achive this.
+pseudocode-detailed yet readable description of what a computer program or algorithm should do eg descriptive variable name
+%d - used as a placeholder to specify integer values, decimals, or numbers. It allows us to print numbers within strings or other values. 
+The %d operator is put where the integer is to be specified. Floating-point numbers are converted automatically to decimal values.
+%x - hexadecimal, %o - octal,%f- float,%s-string
+'''
+my_name = 24
+print("Hello and welcome{}!" .format(my_name))
+print(f'Hello and welukamu {my_name}')
+'''
+
