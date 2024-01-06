@@ -1,0 +1,2 @@
+#Customized simple explanations collected as i learn python
+_init_() method -python calls this method by default everytime you create an object, it creates space in computer memory for the object
