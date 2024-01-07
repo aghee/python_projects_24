@@ -21,9 +21,62 @@ pseudocode-detailed yet readable description of what a computer program or algor
 %d - used as a placeholder to specify integer values, decimals, or numbers. It allows us to print numbers within strings or other values. 
 The %d operator is put where the integer is to be specified. Floating-point numbers are converted automatically to decimal values.
 %x - hexadecimal, %o - octal,%f- float,%s-string
+formating strings
+The f/F flag (placed before the opening quotation mark).
+The .format() method (requires manually adding placeholders)
+
 '''
 my_name = 24
 print("Hello and welcome{}!" .format(my_name))
 print(f'Hello and welukamu {my_name}')
 '''
+plus-equals operator  x+=y same as x=x+y
+
+Rules for python variables
+A variable name must start with a letter or the underscore character. It cannot start with a number.
+A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _).
+Variable names are case-sensitive (num, Num, and NUM are three different variables).
+Variables can’t have spaces or symbols in their names other than an underscore (_)
+
+Python Operators
+Arithmetic operators for performing traditional math evaluations such as + - / % * // **
+Assignment operators for assigning values to variables such as = += -= /= %= *=
+Comparison operators for comparing two values such as == != > >= < <=
+Logical operators for combining boolean values such as and or not
+
+Order of operations(Precedence)
+NOTE: Items at the same precedence are evaluated left to right. The exception to this is exponentiation, which evaluates right to left
+Items in parentheses, ((…)), have the highest level of precedence, expressions within them are evaluated first.
+Exponentiation (**)
+Multiplication and division operators (*, /, // & %)
+Addition and subtraction (+ & -)
+Comparison (<, <=, > & >=)
+Equality (== & !=)
+not
+and
+or
+
+When python interpreter sees the = assignment operator, three things happen;
+the expression on the right side of the symbol is evaluated to obtain a value.
+that value is placed in a memory location the address of that location is assigned to the variable on the left of the symbol.
+The interpreter keeps track of the number of references to the address, 
+and when that number is zero, the memory is released (actually, tagged for “garbage collection”).
+Any type of object can go in any address
+
+strings-immutable- dont change
+\ backslash, escape character eg It\'s
+\n newline \t tab
++ concatenate strings * multiply strings
+
+words that start with uppercase letters come before words that start with lowercase letters, Z is greater than A
+Built-in string methods eg split() etc
+
+Python built-in data types
+String type: str
+Boolean type: bool
+Binary types: bytes, bytearray, memoryview
+Number types: int, float, complex
+Sequence Types: list, range, tuple
+Set types: set, frozenset
+Dictionary type: dict
 
