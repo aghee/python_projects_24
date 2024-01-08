@@ -80,3 +80,4 @@ Sequence Types: list, range, tuple
 Set types: set, frozenset
 Dictionary type: dict
 
+Floating point arithmetic-Limitations- pythondocs -python.org
