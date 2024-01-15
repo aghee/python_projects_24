@@ -81,3 +81,12 @@ Set types: set, frozenset
 Dictionary type: dict
 
 Floating point arithmetic-Limitations- pythondocs -python.org
+
+OOP
+Child can access all parent's data members(class variables and instance variables)and methods, parent **CANNOT** access child's methods
+Object belonging to child, also belongs to child's parent(s)--isinstance(obj,class)-check rship between objects and classes
+Constructors - special class method for creating and initializing an object instance at that class,in python every class has a 
+constructor(its not required to define explicitly)
+Method Overriding
+Try,except,else,finally?
+data hiding using double underscore __ eg __count=0
