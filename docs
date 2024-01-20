@@ -80,8 +80,18 @@ Sequence Types: list, range, tuple
 Set types: set, frozenset
 Dictionary type: dict
 
-Floating point arithmetic-Limitations- pythondocs -python.org
+sorted(argument like list,dictionaries,strings,tuple), returns a new list
+sort()-no arguments, list method only
 
+Floating point arithmetic-Limitations- pythondocs -python.org
+---in java, what about py???-----------
+linkedlist--pointers
+queue--First In First Out(FIFO)
+stack-Last In  First  Out(LIFO)
+Tree--recursion
+hashmaps--like dictionaries
+
+----------------------------------------
 OOP
 Child can access all parent's data members(class variables and instance variables)and methods, parent **CANNOT** access child's methods
 Object belonging to child, also belongs to child's parent(s)--isinstance(obj,class)-check rship between objects and classes
@@ -90,3 +100,411 @@ constructor(its not required to define explicitly)
 Method Overriding
 Try,except,else,finally?
 data hiding using double underscore __ eg __count=0
+
+---dictionaries---
+print('Dictionaries')
+
+ 
+
+dict_one=dict({'lola':98,'pop':800})
+
+print(type(dict_one))
+
+#dictionary={key:value}
+
+ 
+
+#dict_one=None
+
+print(dict_one)
+
+ 
+
+dict2={'name':900, 800:99, False:[899,'popo','no_lilo'], 7.777:9568}
+
+print(dict2)
+
+ 
+
+cities=('kikuyu','lodwar','machakos','kiambu')
+
+print(type(cities))
+
+ 
+
+country='Kenya'
+
+country1='UG'
+
+c_dict=dict.fromkeys(cities,country)
+
+print(c_dict)
+
+ 
+
+dict3={True:711,89.99:745,'salo':'togeza','tree':566}
+
+print(len(dict3))
+
+ 
+
+dict3.update(salo=999,IS='puncture',togeza=888)
+
+print(dict3)
+
+dd=dict3.popitem()
+
+print(dict3)
+
+print(dd)
+
+ 
+
+dict3.clear()
+
+print(dict3)
+
+ 
+
+'''
+
+dict3.update(dict2)
+
+del dict3['IS']
+
+print(dict3)
+
+'''
+
+ 
+
+ 
+
+'''
+
+dict3[True]='yes we can'
+
+print('tree' in dict3)
+
+dict3['tree']='UPDATED?'
+
+print(dict3)
+
+'''
+
+'''
+
+print(dict3.items())
+
+print(dict3.keys())
+
+print(dict3.values())
+
+print(dict3.get('treep'))
+
+'''
+-------------------------------------------------------------------------
+LIST COMPREHENSION, TUPLES
+
+Tips
+
+List is a collection which is ordered and changeable. Allows duplicate members.
+
+Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+
+Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+
+Dictionary is a collection which is ordered** and changeable. No duplicate members.
+
+ 
+
+**When choosing a collection type, it is useful to understand the properties of that type. Choosing the right type for a particular data set could mean retention of meaning, and, it could mean an increase in efficiency or security.**
+
+Slicing
+
+first item has index zero
+
+last item index is -1
+
+negative indexing means starting from the end of tuple
+
+[::-1] start from the last backwards/reverse
+
+[::-2] start from the last, skip two(the last inclusive),print next, skip two
+
+[:-1] remove the last item
+
+[-1] print the last item
+
+[x:y] x-included, y-excluded that is, starting from x,upto but not including y
+
+ 
+
+Tuples are unchangeable/immutable, meaning that you cannot change, add, or remove items once the tuple is created.(Workaround: convert tuple to a list, update the list,then convert the list back to a tuple)
+
+To add one item to list- .append()
+
+To add more than one item to list-.extend(['itemone','itemtwo'])
+
+ 
+
+tp = ("apple", "banana", "cherry","pawpaws","mango","beet","kiwifruit","dragonfruit")
+
+'''
+
+Another way of onverting the tuple to list using list comprehension
+
+tp = ("apple", "banana", "cherry","pawpaws","mango","beet","kiwifruit","dragonfruit")
+
+tpnew=[i for i in tp]
+
+print(tpnew)
+
+'''
+
+tlist=list(tp)
+
+#tlist.append('item') takes one argument,adds only one item at a time
+
+tlist.extend(['junkyfruit','passion','jyuce','healingfruit','camelfruit'])#adds many items
+
+tlist[0]='firstfruit'#added fruit as the first on list at index zero
+
+print(tlist)
+
+#remove item from tuple
+
+tlist.remove('dragonfruit')
+
+#del tlist[1]#remove item using its index
+
+#del tlist-delete the whole list
+
+#remove multiple items from list
+
+tlist=[i for i in tlist if 'a' in i]#list comprehension--i is what will be returned and stored in the variable tlist(it can be any expression, not necessarily the iteration variable),i is the iteration variable in the for loop,tlist is the iterable(the one we will be looping through each time until we reach its end), if is the condition we want to check that determines the value of i that will be returned and stored in our variable: NB CONDITION IS OPTIONAL
+
+#list comprehension--construct new lists from existing ones
+
+#list comprehension syntax : [expression for item in iterable if condition == True]
+
+#tlist=[i for i in tlist if i not in tlist[0:6]]
+
+print(tlist)
+
+tp=tuple(tlist)
+
+print(tp)
+
+print('------------------------------------')
+
+ 
+
+#Add tuple to tuple
+
+tpa=('bread','peanut','butter')
+
+tpb=('blueband',)#When creating a tuple with only one item,include a comma after the item
+
+tpc='avocado','mayo','eggs','milk'
+
+tpa+=tpb+tpc
+
+print(tpa)
+
+ 
+
+#Construct new list from existing ones using lambda functions
+
+'''
+
+new_letters = list(map(lambda x: x, 'Simplilearn'))
+
+ 
+
+print(new_letters)
+
+'''
+
+#print odd numbers upto  not including 15
+
+newlist= [i for i in range(99) if i % 2 !=0]
+
+print(newlist)
+
+ 
+
+#numbers divisible by 2 and 3--nested if statement
+
+newlistA= [i for i in range(99) if i % 2 ==0 if i % 3==0]
+
+print(newlistA)
+
+ 
+
+#if...else conditionals
+
+'''
+
+cars = ["Nissan", "Mercedes Benz", "Ferrari", "Maserati", "Jeep", "Maruti Suzuki"]
+
+ 
+
+cars_with_m=[i if i !='Maserati' else 'MAHINDRA'for i in cars ]
+
+print(cars_with_m)
+
+'''
+TUPLES CONT’D
+
+NB: While True --is a looping construct in the Python programming language that allows a block of code to be repeated indefinitely.
+
+#insert item at specific index in a list
+
+newt=[i for i in thistuple]#list comprehension
+
+#newt.insert(1,'fruit')#insert item at a specific index in a list
+
+print(newt)
+
+ 
+
+PACKING--assign tuple items to a single variable ,UNPACKING TUPLES--Assign tuple items to individual variables
+
+If the number of variables is less than the number of values, you can add an * to the variable name and the values will be assigned to the variable as a list
+
+If the asterisk is added to another variable name than the last, Python will assign values to the variable until the number of values left matches the number of variables left.
+
+Loop through the index numbers eg
+
+FOR LOOP
+
+fruits = ("apple", "banana", "cherry","KIWI","strawberry","chia seeds","tomato")
+
+for i in range(len(fruits)):
+
+    print(fruits[i])
+
+ 
+
+WHILE LOOP
+
+NB: Use the len() function to determine the length of the tuple, then start at 0 and loop your way through the tuple items by referring to their indexes.
+
+fruits = ("apple", "banana", "cherry","KIWI","strawberry","chia seeds","tomato")
+
+counter=0
+
+while counter<len(fruits):
+
+    print(fruits[counter])
+
+    counter+=1
+
+ 
+
+Indefinite loop eg
+
+counter=7
+
+while counter==len(fruits):
+
+    print(fruits[counter-1])
+
+    #break --stops the loop from looping forever
+
+    #counter+=1 --helps stop the loop from looping forever
+
+Join two or more tuples +
+
+multiply the content of a tuple a given number of times, you can use the * operator *
+
+Tuple Methods
+
+count()  Returns the number of times a specified value occurs in a tuple
+
+index()   Searches the tuple for a specified value and returns the position of where it was found
+--------------------------------------------------------------------------
+Algorithms
+
+Algorithms--optimization,efficiency
+
+**Big O Notation ...etc
+
+**breadth first search
+
+search
+
+encryption
+
+principles
+
+input>set of Instructions>execution>output>>termination of program
+
+Simple recursive algorithms--iteration, recursion
+
+Algorithms within data structures
+
+DS-Lists,stacks,trees,hastables,heaps,linked lists,queues,**arrays--types of arrays
+
+stack,queue,priority queue
+
+Search and sort
+
+Linear/sequential search
+
+Binary search--usually done in a sorted array
+
+Sorting-bubble sort???--outdated???
+
+Insertion sort
+
+**Linkedlists**
+
+-Traverse a linked list
+
+-Search a list
+
+-Insert header or tail
+
+-Delete a node
+
+-headers, nodes,tail
+
+**Doubly linked lists**
+
+**Hash tables- Associative arrays,hash functions,key/value pairs,collision,chaining,highly efficient--Robin Karp algorithm**
+
+Divide and conquer--implemented recursively
+
+-Function optimization
+
+-**Merge sort-top down,bottom up**
+
+-Strassen algorithm--matrix multiplication
+
+Greedy Algorithms-fractional knapsack,fibonacci
+
+Brute force algorithm
+
+Dynamic Programming-dynamic programming languages, dynamic programming methodology
+
+*Python is strongly typed- the interpreter keeps track of all variable types.
+
+*Python can be very dynamic, as it rarely uses this information to limit variable usage.
+
+-Principal of optimality
+
+break problem down into smaller sub-problems
+
+solving recursively
+
+using optimal solutions to construct optimal solutions for the original problem
+
+-recursion
+
+top/down(with memoization)
+
+bottom/up(with tabulation)
+
+--------------------------------------------------------------------------------
