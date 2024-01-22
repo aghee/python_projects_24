@@ -30,7 +30,6 @@ elif random_number==12:
 elif random_number==14:
     answer+='Chances are low, just keep trying!!!'
 else:
-
     answer+='Error'
 print(question)
 print('Magic 8-Ball\'s answer: '+answer)
