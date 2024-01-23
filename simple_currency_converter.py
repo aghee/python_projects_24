@@ -1,4 +1,6 @@
 #1usd=160.77kes
+#Pending---Capture user input to cater for any currency amounts
+#try except for catching errors
 print('-------------------------Simple Currency Converter-------------------')
 def calc_converter(usd,ugx,tsh,pound,korean_yang):
     converted_curr=list()
