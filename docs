@@ -623,4 +623,49 @@ FUNCTIONS
 -def keyword--beginning of a function/function header
 def function_name():
     #function tasks go here
+--Types of arguments--positional arguments,keyword arguments,default arguments
+-Keyword arguments must be passed after positional arguments
+*args--tuple--The asterisk, known in this context as the “packing operator”, packs the arguments into a tuple stored in args
+**kwargs--dictionary--the double asterisk is a packing operator that produces a dictionary rather than a tuple
+--functions can be called with an arbitrary/random number of keyword arguments. In this case, a special parameter **kwargs is passed in, 
+where the double asterisk is a packing operator that produces a dictionary rather than a tuple.
+The parameter name and value of each keyword argument are packed as a key-value pair stored in kwargs
+def north_american_capitals(**kwargs):
+  for i in kwargs:#i--key, kwargs--dictionary
+    #print(kwargs)
+    print(i + ": " + kwargs[i])#kwargs[i]--retrieves value for the key i 
 
+similar to
+def func1(**kwargs):
+    for i in kwargs:
+        print(i,':'+ kwargs[i])
+func1(key1='australia',key2='jamaica',key3='turkana',key4='mandera')
+
+north_american_capitals(canada="Ottawa", us="Washington D.C.", mexico="Mexico City",dubai="dhubai")
+-When defining a function, both forms of argument packing can be used. However, args must always precede kwargs
+-Argument unpacking--pass positional or keyword arguments dynamically
+
+Anonymous Functions- Defines a function without a name using the lambda keyword.
+
+Higher Order Functions
+Predicate--a function that returns a boolean value
+In Python, functions are treated as first-class objects, meaning they can be assigned to variables, stored in data structures, and passed to or returned from other functions
+Functions are considered to be “higher-order” values because they can be used as parameters or return values for other functions eg filter()
+
+-----NEW-----
+yield keyword--FIBONACCI SERIES!!!
+-yield suspends the function’s execution and returns the value specified
+-the yield statement retains the state of the function and will resume where it left off on the next function call 
+(i.e. execution resumes after the last yield statement). This way, the function can produce a number of values over time.
+generator functions
+generator object
+iterator
+
+ 
+
+---------------------RESOURCES-----------------------------------------------------
+thetesttribe.com --testautomation
+
+
+
+-------------------------------END OF RESOURCES------------------------------------
