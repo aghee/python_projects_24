@@ -1,4 +1,4 @@
-#1usd=160.77kes
+#1usd=163kes
 #Pending---Capture user input to cater for any currency amounts
 #try except for catching errors
 #How to validate input from user???-should a negative number be converted?-edge cases??
@@ -40,6 +40,7 @@ def calc_converter(**curr):
     #print(converted_curr)
     for currency,amount in converted_curr:
         print(num,'from',currency,'to Ksh is:',round(amount,2))
+#Update FOREX for any other currencies in this dictionary
 curr={
     'USD':163.00,
     'UGX':0.043,
