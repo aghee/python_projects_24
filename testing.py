@@ -31,6 +31,7 @@ while True:
         break
 print('The sum is:', sum)
 '''
+'''
 #transposed matrix
 transposed = []
 matrix = [[1, 2, 3, 4], [4, 5, 6, 8]]
@@ -50,3 +51,65 @@ print(reverted1)
 single_digits=[0,1,2,3,4,5,6,7,8,9]
 cubes=[i**3 for i in single_digits]
 print(cubes)
+
+#Sum of numbers in even positions in list
+tsk=[0,1,2,3,4,5,6,7,8,9,10,11,12,19,21,42,88,80,99,78,32,33,47,45,33.4,32.2]
+x=[]
+y=[]
+for index,item in enumerate(tsk,0):
+    if index%2==0:
+        x.append(item)
+    if index%2 !=0:
+        y.append(item)
+print(x)
+print(sum(x))
+print(y)
+print(sum(y))
+'''
+'''
+#Simple recap of classes
+class dogCat:
+    att1='mamamlia'
+    def __init__(self,breed,color,lifespan,ears):
+        self.b=breed
+        self.c=color
+        self.lfpn=lifespan
+        self.er=ears
+        #print('self id is',id(self))
+    def sleeps(self):
+        print('This is a common trait in:',self.b)
+        print(self.c,'are the best',self.b,'to keep in any household')
+        print(self.b, 'has',self.er,'ears')
+doggy=dogCat('gshepherd','blackish',9,2)
+catty=dogCat('miawu','orange',99,4)
+obj1=dogCat('Chihuahua','white',4.9,3)
+
+print(doggy.b,'belongs to',doggy.__class__.att1,'species')
+doggy.sleeps()
+catty.sleeps()
+obj1.sleeps()
+#print(id(doggy))
+'''
+#parent/base vs derived/child class
+class parentOne:
+    def __init__(self,name,id):
+        self.name=name
+        self.id=id
+
+    def display(self):
+        print(self.name,self.id)
+
+class childOne(parentOne):
+    def __init__(self,name,id):
+        super().__init__(name,id)
+        #self.age=age
+        #self.status=status
+    def Printer(self):
+        print('details are: ',self.name,self.id)
+
+obj1=parentOne('parrot',20240)
+obj1.display()
+
+obj2=childOne('pride',1111)
+obj2.Printer()
+obj2.display()

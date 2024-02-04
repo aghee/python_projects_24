@@ -1,8 +1,195 @@
 #PEP8--comments max 79 characters,code max 72 characters
 #Customized simple explanations collected as i learn python
-_init_() method -python calls this method by default everytime you create an object, it creates space in computer memory for the object
+
+----------------------OOP-----------------------------------------------------------------------------------------------------------
+__init__() method -python calls this method by default everytime you create an object, it creates space in computer memory for the object
 Any time a .py file is run and interpreted, certain variables are set up and linked with the file. 
 This includes __main__ environment variable, which is assigned as the file’s __name__ variable.
+Object
+-Variables that contain data and functions that can be used to manipulate the data
+-The object's data can vary in type (string, integer, etc.) depending on how it's been defined.
+-An object is like a mini-program inside python, with its own set of rules and behaviors
+Constructors
+-used to initialize class instance variables and make sure the object is created in a usable state
+Class variables
+-defined within a class but outside any of the class's methods
+Instance variable
+-Are owned by instances of the class. This means that for each object or instance of a class, the instance variables are different.
+-Unlike class variables, instance variables are defined within methods
+-An instance variable (e.g.: when using the self. prefix) is data that is associated with a specific instance of an object.
+Data members
+-A class variable or instance variable that holds data associated with a class and its objects
+Function overloading 
+−The assignment of more than one behavior to a particular function.
+
+29.01.2024
+
+Scope
+
+-The scope of a name is the region of a program in which that name has meaning. The interpreter determines this at runtime based on where the name definition occurs and where in the code the name is referenced.
+
+Variable scope
+
+-The existence of multiple, distinct namespaces means several different instances of a particular name can exist simultaneously while a Python program runs. As long as each instance is in a different namespace, they’re all maintained separately and won’t interfere with one another.
+
+QN: Suppose you refer to the name x in your code, and x exists in several namespaces. How does Python know which one you mean?
+
+ANSWER: If your code refers to the name x, then Python searches for x in the following namespaces in the order shown: LEGB rule
+
+1.Local: If you refer to x inside a function, then the interpreter first searches for it in the innermost scope that’s local to that function.
+
+2.Enclosing: If x isn’t in the local scope but appears in a function that resides inside another function, then the interpreter searches in the enclosing function’s scope.
+
+3.Global: If neither of the above searches is fruitful, then the interpreter looks in the global scope next.
+
+4.Built-in: If it can’t find x anywhere else, then the interpreter tries the built-in scope.
+
+The interpreter searches for a name from the inside out, looking in the local, enclosing, global, and finally the built-in scope.If the interpreter doesn’t find the name in any of these locations, then Python raises a NameError exception.
+Namespaces-
+
+-a collection of currently defined symbolic names along with information about the object that each name references. You can think of a namespace as a dictionary in which the keys are the object names and the values are the objects themselves. Each key-value pair maps a name to its corresponding object. Types of namespaces- Builtin,global,enclosing, local.
+
+-As Python executes a program, it creates namespaces as necessary and deletes them when they’re no longer needed. Typically, many namespaces will exist at any given time.
+
+-nonlocal keyword-Names specified after the nonlocal keyword refer to variables in the nearest enclosing scope
+
+-global keyword
+
+Code Example
+
+#Namespaces and scope
+
+def scope_test():
+
+    spam = "test spam" #enclosing scope
+
+    def do_local():
+
+        spam = "local spam" #local scope
+
+    def do_nonlocal():
+
+        nonlocal spam #Names specified after the nonlocal keyword refer to variables in the nearest enclosing scope
+
+        spam = "nonlocal spam"
+
+    def do_global():
+
+        global spam
+
+        spam = "global spam" #global scope
+
+    do_local()
+
+    print("After local assignment:", spam)# output:After local assignment: test spam???--LEGB(local>enclosing>global>built-in)
+
+    do_nonlocal()
+
+    print("After nonlocal assignment:", spam)#output:After nonlocal assignment: nonlocal spam
+
+    do_global()
+
+    print("After global assignment:", spam)#output: After global assignment: nonlocal spam
+scope_test()
+
+print("In global scope:", spam)#output:In global scope: global spam
+
+
+**object can call method
+
+object can call attribute
+
+class_name.method_name(object_name) same output as object_name.method()
+
+self- refers to the instance of the class that is currently being used,self is always pointing to the Current Object.Whenever you call a method of an object created from a class, the object is automatically passed as the first argument using the “self” parameter. This enables you to modify the object’s properties and execute tasks unique to that particular instance.
+
+In a class having many objects, each of the objects have different self which contain their attributes.
+
+NOTE: Self is a convention and not a Python keyword. Self is a parameter in Instance Method and the user can use another parameter name in place of it. But it is advisable to use self because it increases the readability of code, and it is also a good programming practice.
+
+Instance-single occurence of sth
+
+Class-collection of objects
+
+Object-instance of a class, an entity that has a state and behavior associated with it.
+
+An object consists of:
+
+State- attributes of an object,properties of an object eg breed,age,color
+
+Behaviour-methods of an object,response of an object to other objects eg eats,sleeps
+
+Identity-name of the object eg name of dog
+
+__init__ constructor- run as soon as an object of a class is instantiated.The method is useful to do any initialization you want to do with your object.
+
+Example code
+
+class Dog:
+
+
+    # class attribute -shared by all instances of the class
+
+    attr1 = "mammal"
+
+
+    # Instance attribute
+
+    #name parameter is used to assign a name attribute to each instance of Dog.
+
+    def __init__(self, name):#initializes an instance of the Dog class
+
+        self.name = name
+
+# Driver code
+
+# Object instantiation. The __init__ method is called for each instance to initialize their name attributes with the provided names.
+
+Rodger = Dog("Rodger")
+
+Tommy = Dog("Tommy")
+
+# Accessing class attributes
+
+print("Rodger is a {}".format(Rodger.__class__.attr1))
+
+print("Tommy is also a {}".format(Tommy.__class__.attr1))
+
+# Accessing instance attributes
+
+print("My name is {}".format(Rodger.name))
+
+print("My name is {}".format(Tommy.name))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------END OF OOP---------------------------------------------------------------------------------
+enumerate()
+- tracks the index of each item in an iterable: enumerate() allows you to loop over a collection of items while keeping track of the current item index
+-simplify complex list comprehensions: enumerate() can simplify complex list comprehensions by providing a more efficient way 
+to iterate over the values in the list
+-improve the performance of your code,enumerate() creates an iterator for the collection, which is more efficient than looping through each item.
+**ITERATORS**
 File methods in python
 .close() Allows the user to close an open file within the IDE
 .read() Allows the user to read the contents of an open file and return the number of associated bytes
@@ -652,6 +839,129 @@ Predicate--a function that returns a boolean value
 In Python, functions are treated as first-class objects, meaning they can be assigned to variables, stored in data structures, and passed to or returned from other functions
 Functions are considered to be “higher-order” values because they can be used as parameters or return values for other functions eg filter()
 
+25.01.2024
+
+functions cont'd
+
+-When there is a result from a function that is stored in a variable, it is called a returned function value.
+
+-return passes the variable back to the function caller
+
+Stacks-Last In First Out(LIFO). Stacks are less flexible than lists, but are easier to implement, and more efficient (for those operations they can do). Given a stack, the accessible element of the stack is called the top element. Elements are not said to be inserted; they are pushed onto the stack.
+
+Queues- First In First Out(FIFO).
+
+ 
+STRINGS
+
+Slicing
+
+string[start:end:step]
+
+start defaults to 0 and gives the initial position the slice will start from.
+
+end defaults to -1 and is the position where the slicing will end.
+
+step defaults to 1 and indicates the number of steps to take in between indexes.
+
+name='Code Ninja'
+
+name[::2]#from reverse,print that last character,skip two(the printed one included),print next,skip two,print next,skip two...
+
+#output:anNeo
+
+
+.find()The string method .find() can also be used to find a subset. It returns the index of the first occurrence of the substring. 
+If the substring is not found, it returns -1. 
+
+name='codetechbabes'
+
+p=name[0:7:2]
+
+#output:cdtc
+
+Example code
+
+Concatenates the last three letters of each and returns them as a string
+
+first_name = "Reiko"
+
+last_name = "Matsuki"
+
+ 
+
+def password_generator(first_name,last_name):
+
+  nw=first_name[len(first_name)-3:]+last_name[len(last_name)-3:]
+
+  return nw
+
+temp_password=password_generator(first_name,last_name)
+
+print(temp_password)
+
+#output:ikouki
+
+ 
+
+Get the middle character of a string
+
+**floor division, //:used to divide two numbers and get the result in which the quotient is rounded down to the nearest integer value
+
+#FOR STRINGS WITH EVEN NO. OF CHARACTERS
+
+first_name = "Matsukip"
+
+#left character
+
+w=(len(first_name)-1)//2
+
+print(first_name[w])
+
+ 
+
+#right character
+
+z=len(first_name)//2
+
+print(first_name[z])
+
+ 
+
+#FOR STRINGS WITH ODD NO. OF CHARACTERS
+
+first_name = "Matsuip"
+
+middle=len(first_name)//2
+
+print(first_name[middle])
+
+ 
+
+COMPARING STRINGS
+
+== Equal Returns True if two strings are equal.
+
+!= Not equal Returns True if two strings are not equal.
+
+<  Less than  Returns True if the left string is lexically prior the right string.
+
+> Greater than Returns True is the left string comes lexically after the right string.
+
+<= Less than or equal to Returns True if the left string is equal to or lexically prior to the right string.
+
+>= Greater than or equal to Returns True if the left string is equal to or comes lexically after the right string.
+
+**Negative indices
+
+**Strings are immutable--This means that we cannot change a string once it is created. We can use it to create other strings, but we cannot change the string itself.This property, generally, is known as mutability.When concatenating two strings in Python, rather than updating a string, it creates an entirely new string in memory.
+
+**Because strings are lists, that means we can iterate through a string using for or while loops
+
+ESCAPE CHARACTERS
+
+Backslash \ tells Python to treat the character that follows as a literal character, not a special one.By adding a backslash in front of the special character we want to escape, \", we can include it in a string.
+
 -----NEW-----
 yield keyword--FIBONACCI SERIES!!!
 -yield suspends the function’s execution and returns the value specified
@@ -669,3 +979,28 @@ thetesttribe.com --testautomation
 
 
 -------------------------------END OF RESOURCES------------------------------------
+generator functions
+coroutine functions
+-native coroutine functions
+-native coroutine
+-generator based co-routine function
+-coroutine object
+Coroutine generators
+Async def,async,await keywords
+decorator
+**Use generators,comprehensions,iterators instead of lists and tuples---why is this so?
+**an API endpoint is a specific location within an API that accepts requests and sends back responses.
+It's a way for different systems and applications to communicate with each other, 
+by sending and receiving information and instructions via the endpoint.
+-----------------------------------------TWITTER API---------------------------------------------------------------------------------------------------------------------
+Details
+Default project-1752766710573142016
+Project App: 1752766710573142016agnes_mutem
+Consumer Key and Secret
+API key and secret--same as username and password --that is @agnes_mutembei, @AGGY405.
+Authentication Tokens
+Bearer token:AAAAAAAAAAAAAAAAAAAAAKazsAEAAAAAoiY368jMenZkMLuc%2B7OZS6FlP7E%3DvF48H042EpSlvYCq33qRYN9wQkBNAkdwahnCTX6RioX72Y3QmM
+Access Token:804985374745493505-6tp3Cs1v5T8C5QNcUlEB1JdnHxiH4bz
+Access Token Secret:piDs7xtuoZ1cimlZ3okge01XyW6dzaYjHG3XVNiXJM8LO
+
+-------------------------------------------------------ENDS HERE----------------------------------------------------------------------------------------------------------
