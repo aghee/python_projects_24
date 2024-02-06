@@ -90,11 +90,13 @@ catty.sleeps()
 obj1.sleeps()
 #print(id(doggy))
 '''
+'''
 #parent/base vs derived/child class
 class parentOne:
     def __init__(self,name,id):
         self.name=name
         self.id=id
+        
 
     def display(self):
         print(self.name,self.id)
@@ -109,7 +111,72 @@ class childOne(parentOne):
 
 obj1=parentOne('parrot',20240)
 obj1.display()
-
+#print(id(obj1))
 obj2=childOne('pride',1111)
 obj2.Printer()
-obj2.display()
+#obj2.display()
+#print(id(obj2))
+'''
+'''
+#Docstrings vs comments
+def div(a,b):
+    \'''Function that divides two numbers.\'''
+    #if b==0:
+        #raise ZeroDivisionError('Division by zero not allowed')
+    return a/b
+z=div(5,20)
+print(z)
+
+help(div)
+print(div.__doc__)
+print('#comment')
+'''
+'''
+import math
+def factorial(n):
+    \'''Function showing factorial of number\'''
+    if n == 0:  
+        return 1
+    else:
+        return n *factorial(n - 1) 
+       
+print(factorial(4))
+print(math.factorial(4- 1))
+'''
+#Closures - a function whose return value depends on the value of one or 
+#more variable declared outside the function
+#Closure function object remembers the value in the enclosing scope
+#(thats is outer function) even if they are not present in the memory
+'''
+def func1(lst):
+    \'''Enclosing scope.\'''
+    def last_item(lst1):
+        \'''Local scope.\'''
+        return lst1[len(lst)-1]
+    lst.remove(last_item(lst))
+    return lst
+lst=[1,8,9,3,4,7,2,22,99,6,5,35,89,85]
+print(func1(lst))
+print(func1(lst))
+print(func1(lst))
+'''
+def outer(sometext):
+    def inner():
+        '''This is the Closure.'''
+        print(sometext)
+    return inner #return inner function without parenthesis
+a=outer('Hey you!')#a contains inner function
+#delete outer function
+del outer
+#outer('Hey you') --outer is no longer defined but variable a remembers it
+a()
+#ADV OF CLOSURE -Used heavily in decorators
+#1. Remembers value outside the scope
+#2.Just like classes remember the state of variables and methods
+#declared in the class,closures do so as well thus can be used 
+#in place of classes that have fewer methods in them.
+#3.Are sometimes more efficient than the normal functions-code efficiency
+
+#print(id(func1(lst)))
+#var1=func1(lst)
+#print(id(var1))
