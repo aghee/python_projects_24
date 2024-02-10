@@ -22,6 +22,7 @@ def deleteActivity():
     try:
         deleteact=int(input('Please select activity to delete: '))
         if deleteact<len(activity) and deleteact >=0:
+            #remove an item from a specified position on a list/dictionary and return it
             activity.pop(deleteact)
             print(f'{deleteact} has been deleted from your list')
         else:

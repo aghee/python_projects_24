@@ -160,9 +160,10 @@ print(func1(lst))
 print(func1(lst))
 print(func1(lst))
 '''
+'''
 def outer(sometext):
     def inner():
-        '''This is the Closure.'''
+        \'''This is the Closure.\'''
         print(sometext)
     return inner #return inner function without parenthesis
 a=outer('Hey you!')#a contains inner function
@@ -180,3 +181,15 @@ a()
 #print(id(func1(lst)))
 #var1=func1(lst)
 #print(id(var1))
+'''
+'''
+def add(*args):
+    add_num=0
+    for i in args:
+        add_num+=i
+    return 'The sum of {} is {}'.format(args,add_num)
+print(add(7,7,7,7,7,5))
+'''
+lst=[5,4,3,2,1]
+print(5*4*3*2*1)
+print(lst[0]*sum(lst[1:]))
