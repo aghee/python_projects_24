@@ -45,7 +45,7 @@ def decorator_func(display_func):
                     break
             except ValueError:
                 print('THAT IS NOT A NUMBER.TRY AGAIN!!!')
-                continue
+                #continue
         while True:
                 print('----------------Check divisibility of number entered--------------')
                 options=\
@@ -90,10 +90,12 @@ def decorator_func(display_func):
                     else:
                         print('Not divisible by 7, Quotient and remainder is:',divmod(check_modulo,7))
                 if opt_selected not in ('A','B','C','D','E','F'):
-                    proceed=input('Would you like to proceed? Enter Y or N: ')
+                    proceed=input('Invalid Option. Would you like to proceed? Enter Y or N: ')
                     if proceed=='Y' or proceed=='y':
                         print('Kindly select an option from the list shown')
-                        continue
+                        #While True runs indefinitely as the condition(code below it)
+                        # will always be true, it needs a break statement to stop
+                        # continue
                     else:
                         print('END OF OPTIONS.GOODBYE!!!')
                         break
