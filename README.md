@@ -5,8 +5,11 @@ Simple projects developed using python and flask as I build my skill in this tec
 ### Contribution Guidelines
 Zen of Python
 #### Instructions
+
 -Fork this repository
+
 -Clone your forked repository
+
 -Add your scripts
 -Commit and push
 -Create a pull request
