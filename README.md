@@ -3,7 +3,8 @@ This directory contains beginner to intermediate python projects
 ## Description
 Simple projects developed using python and flask as I build my skill in this tech stack.Any developer is free to contribute by submitting their own scripts written in python
 ### Contribution Guidelines
-Zen of Python
+[Zen of Python](https://docs.python.org/3/glossary.html#term-Zen-of-Python)
+
 #### Instructions
 
 Fork this repository
