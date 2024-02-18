@@ -190,6 +190,20 @@ def add(*args):
     return 'The sum of {} is {}'.format(args,add_num)
 print(add(7,7,7,7,7,5))
 '''
+'''
 lst=[5,4,3,2,1]
 print(5*4*3*2*1)
 print(lst[0]*sum(lst[1:]))
+'''
+#mutable vs immutable
+'''
+str1='mama'
+print(id(str1))
+str1='baba'
+print(id(str1))
+
+lista=[1,2,3,4,'maa','baa']
+print(id(lista))
+lista.append('zoom')
+print(id(lista))
+'''

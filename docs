@@ -992,15 +992,14 @@ decorator
 **an API endpoint is a specific location within an API that accepts requests and sends back responses.
 It's a way for different systems and applications to communicate with each other, 
 by sending and receiving information and instructions via the endpoint.
------------------------------------------TWITTER API---------------------------------------------------------------------------------------------------------------------
-Details
-Default project-1752766710573142016
-Project App: 1752766710573142016agnes_mutem
-Consumer Key and Secret
-API key and secret--same as username and password --that is @agnes_mutembei, @AGGY405.
-Authentication Tokens
-Bearer token:AAAAAAAAAAAAAAAAAAAAAKazsAEAAAAAoiY368jMenZkMLuc%2B7OZS6FlP7E%3DvF48H042EpSlvYCq33qRYN9wQkBNAkdwahnCTX6RioX72Y3QmM
-Access Token:804985374745493505-6tp3Cs1v5T8C5QNcUlEB1JdnHxiH4bz
-Access Token Secret:piDs7xtuoZ1cimlZ3okge01XyW6dzaYjHG3XVNiXJM8LO
 
--------------------------------------------------------ENDS HERE----------------------------------------------------------------------------------------------------------
+***Rest api with flask and python - https://github.com/tecladocode/rest-apis-flask-python ***
+E-BOOK: https://rest-apis-flask.teclado.com/docs/course_intro/
+cs50: https://cs50.harvard.edu/python/2022/weeks/0/
+
+Reference vs copy?
+Pass by value vs pass by reference
+Anonymous variables _
+code for matrices--rows and columns--transposing???
+nested loops
+programmingexpert.io--tech with tim-YT
