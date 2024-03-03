@@ -1,0 +1,6 @@
+How do i access db details from another file using queries?
+How do i run .db files on vscode? 
+import mydb
+
+SELECT * FROM people;
+

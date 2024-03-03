@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data</title>
+</head>
+<body>
+    <h1>User details</h1>
+    <table>
+        <tr>
+            <th>Social Security Number</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Gender</th>
+            <th>Age</th>
+        </tr>
+        {% for user in results %}
+        <tr>
+            <th>{{user.ssn}}</th>
+            <th>{{user.firstname}}</th>
+            <th>{{user.lastname}}</th>
+            <th>{{user.gender}}</th>
+            <th>{{user.age}}</th>
+        </tr>
+        {% endfor %}
+    </table>    
+</body>
+</html>
