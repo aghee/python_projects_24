@@ -15,6 +15,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #db object creation
 db = SQLAlchemy(app)
 
+
 class Student(db.Model):
   id=db.Column(db.Integer,primary_key=True)
   fname=db.Column(db.String(20),nullable=False)
