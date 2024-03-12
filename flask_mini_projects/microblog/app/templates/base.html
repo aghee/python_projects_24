@@ -12,8 +12,8 @@
 <body>
     <b>Kenya's Blog</b> 
     <div>
-        <a href="/index">HomePage</a><br>
-        <a href="/login">Login</a>
+        <a href= '{{ url_for("index") }}'>HomePage</a><br>
+        <a href='{{ url_for("login") }}'>Login</a>
     </div>
     {% with messages=get_flashed_messages() %}
     {% if messages %}

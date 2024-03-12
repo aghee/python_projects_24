@@ -1,4 +1,4 @@
-from flask import render_template,flash,redirect,request
+from flask import render_template,flash,redirect,request,url_for
 from app import app
 from app.forms import LoginForm
 
@@ -7,11 +7,11 @@ from app.forms import LoginForm
 def index():
     user={'username':'Agy'}
     posts=[
-        {'author': {'username': 'John'},
-        'body': 'Beautiful day in Portland!'},
+        {'author': {'username': 'Kay'},
+        'body': 'Oh Happy Day!'},
         {
-        'author': {'username': 'Susan'},
-        'body': 'The Avengers movie was so cool!'
+        'author': {'username': 'Wangwi'},
+        'body': 'Don\'t get away with murder movie by Viola Davis was so cool!'
         }
     ]
     return render_template('index.html',user=user,posts=posts)
@@ -21,7 +21,7 @@ def login():
     form=LoginForm()
     if form.validate_on_submit():
         flash('Login requested for user {},remember_me ={}'.format(form.username.data,form.remember_me.data))
-        return redirect('/index')
+        return redirect(url_for('index'))
 
     return render_template('login.html', title='Sign In', form=form)
 

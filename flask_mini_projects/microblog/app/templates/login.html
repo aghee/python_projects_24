@@ -6,11 +6,17 @@
     {{form.hidden_tag()}}
     <p> 
         {{form.username.label}}<br>
-        {{form.username(size=32)}}
+        {{form.username(size=32)}}<br>
+        {% for error in form.username.errors %}
+        <span style="color:red;">[{{ error }}]</span>
+        {% endfor %}
     </p>
     <p>
         {{form.pwad.label}}<br>
-    {{form.pwad(size=32)}}
+        {{form.pwad(size=32)}}<br>
+        {% for error in form.pwad.errors %}
+        <span style="color:rgb(255, 0, 0);">[{{ error }}]</span>
+        {% endfor %}
     </p>
     <p> {{form.remember_me()}} {{form.remember_me.label}} </p>
     <p> {{ form.submit() }}</p>
