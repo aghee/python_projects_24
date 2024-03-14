@@ -1,4 +1,5 @@
 import requests
+
 #accessing image data
 # response=requests.get('https://randomfox.ca/floof/')
 # print(response.status_code)
