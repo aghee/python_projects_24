@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy import Table,Column,Integer,String,MetaData
 
-engine=create_engine('mysql+pymysql://root:pythonsql1@localhost/testdb_one',echo=True)
-# engine=create_engine('sqlite:///students.db',echo=True)
+# engine=create_engine('mysql+pymysql://root:pythonsql1@localhost/testdb_one',echo=True)
+engine=create_engine('sqlite:///testdb_one.db',echo=True)
 metaobj=MetaData()
 
 students=Table(
