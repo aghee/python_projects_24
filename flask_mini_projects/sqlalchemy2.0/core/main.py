@@ -1,16 +1,20 @@
 from sqlalchemy import create_engine
-from sqlalchemy import Table,Column,Integer,String,MetaData
+from sqlalchemy import Table,Column,Integer,String,MetaData,Float
 
-# engine=create_engine('mysql+pymysql://root:pythonsql1@localhost/testdb_one',echo=True)
-engine=create_engine('sqlite:///testdb_one.db',echo=True)
+engine=create_engine('mysql+pymysql://root:pythonsql1@localhost/testdb_one',echo=None)
+# engine=create_engine('sqlite:///testdb_one.db',echo=True)
 metaobj=MetaData()
 
 students=Table(
     'students',
     metaobj,
     Column('id',Integer,primary_key=True),
-    Column('fname',String(25)),
-    Column('lname',String(40))
+    Column('first_name',String(25)),
+    Column('lname',String(40)),
+    Column('marks',Integer),
+    Column('fin_gpa',String(25)),
+    Column('comments',String(30)),
+    Column('salary',Float)   
 )
 
 testtable1=Table(
