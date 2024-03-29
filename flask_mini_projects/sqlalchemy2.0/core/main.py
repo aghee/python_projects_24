@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
-from sqlalchemy import Table,Column,Integer,String,MetaData,Float
+from sqlalchemy import Table,Column,Integer,String,MetaData,Float,ForeignKey
 
-engine=create_engine('mysql+pymysql://root:pythonsql1@localhost/testdb_one',echo=None)
+engine=create_engine('mysql+pymysql://root:pythonsql1@localhost/testdb_one',echo=True)
 # engine=create_engine('sqlite:///testdb_one.db',echo=True)
 metaobj=MetaData()
 
@@ -27,6 +27,13 @@ testtable1=Table(
 
 )
 #create table in db if does not already exist
+addresses=Table(
+    'addresses',
+    metaobj,
+    Column('id',Integer,primary_key=True),
+    Column('st_id',ForeignKey('students.id')),
+    Column('postal_add',String(40)),
+    Column('email_add',String(35))
+)
+
 metaobj.create_all(engine)
-
-

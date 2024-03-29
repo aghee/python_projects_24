@@ -1,6 +1,21 @@
-from main import students,engine
+from main import students,addresses,engine
 from sqlalchemy import text
+from sqlalchemy.sql import select
 
+#***FAILED to execute***
+# selected_students=select([students,addresses]).where(students.c.id==addresses.c.st_id)
+with engine.connect() as conn:
+    # result=conn.execute(selected_students)
+    # final_result=result.fetchall()
+    # print(final_result)
+    selected_qry=text('select s.id,s.first_name,s.lname,a.st_id from students s, addresses a where s.id=a.st_id')
+    final_selected_qry=conn.execute(selected_qry)
+    final_selected=final_selected_qry.fetchall()
+    print(final_selected)
+
+
+
+'''
 #select -read-only-must not have commit()
 selected_item=students.select()
 # print(repr(selected_item))
@@ -24,7 +39,6 @@ print(row)
 for record in result:
     print(record)
 
-'''
 #alias- unable to use alias
 from sqlalchemy import create_engine
 from sqlalchemy.sql import alias,select
@@ -35,5 +49,4 @@ st=students.alias('a')
 s=select([st]).where(st.c.id>5) 
 
 conn.execute(s).fetchall()
-
 '''
