@@ -27,4 +27,4 @@ print('Education:',Education)
 print('Gaming:',Gaming)
 '''  
     counts={}
-    
+
