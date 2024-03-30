@@ -1,7 +1,7 @@
-from main import engine,students,testtable1,addresses
+from main import engine,studnts,testtable1,addresses
 
 # insert one item
-# ins=students.insert().values(fname='village',lname='market')
+# ins=studnts.insert().values(fname='village',lname='market')
 insert1=testtable1.insert().values(dob='31-01-24',status='marrd',home_town='kiambu',occupation='dokey')
 insert2=addresses.insert()
 # print(str(ins))
@@ -23,6 +23,6 @@ with engine.connect() as conn:
    #  result=conn.execute(ins) #result represents Resultproxy
     result=conn.execute(insert2,list_of_addresses)
     #insert many items at once
-    # result=conn.execute(students.insert(),list_of_values)
+    # result=conn.execute(studnts.insert(),list_of_values)
     conn.commit()
 

@@ -1,11 +1,14 @@
 from sqlalchemy import create_engine
 from sqlalchemy import Table,Column,Integer,String,MetaData,Float,ForeignKey
 
-engine=create_engine('mysql+pymysql://root:pythonsql1@localhost/testdb_one',echo=True)
+engine=create_engine('mysql+pymysql://root:pythonsql1@localhost/testdb_one',echo=None)
 # engine=create_engine('sqlite:///testdb_one.db',echo=True)
 metaobj=MetaData()
 
-students=Table(
+
+reflected_table=Table('clients1',metaobj,autoload_with=engine)
+
+studnts=Table(
     'students',
     metaobj,
     Column('id',Integer,primary_key=True),

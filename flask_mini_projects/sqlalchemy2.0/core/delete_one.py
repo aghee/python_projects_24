@@ -1,4 +1,4 @@
-from main import students,addresses,engine,testtable1
+from main import studnts,addresses,engine,testtable1
 from sqlalchemy.sql import text
 
 '''
@@ -17,7 +17,7 @@ with engine.connect() as conn:
 
 #DELETE FROM MULTIPLE TABLES AT ONCE
 stmt=addresses.delete().\
-    where(students.c.id==addresses.c.st_id).\
+    where(studnts.c.id==addresses.c.st_id).\
     where(addresses.c.email_add.startswith('xyz%'))
 with engine.connect() as conn:
     deleted_rec=conn.execute(stmt)

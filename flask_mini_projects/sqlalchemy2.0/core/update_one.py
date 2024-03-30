@@ -1,13 +1,13 @@
-from main import students,addresses,engine
+from main import studnts,addresses,engine
 
 #Syntax: table.update().where(conditions).values(SET expressions)
 '''
-output1=students.update().where(students.c.lname.like('%end%')).values(lname='weekend')
-# output1=students.update().where(students.c.lname=='mutembei').values(lname='monzee')
+output1=studnts.update().where(studnts.c.lname.like('%end%')).values(lname='weekend')
+# output1=studnts.update().where(studnts.c.lname=='mutembei').values(lname='monzee')
 conn= engine.connect()
 conn.execute(output1)
 # conn.commit()
-result=students.select()
+result=studnts.select()
 updated_records=conn.execute(result).fetchall()
 print(updated_records)
 
@@ -16,12 +16,12 @@ print(updated_records)
 # print(output2)
 
 #Update multiple tables at once
-stmt = students.update().\
+stmt = studnts.update().\
 values({
-   students.c.first_name:'xyz',
+   studnts.c.first_name:'xyz',
    addresses.c.email_add:'abc@xyz.com'
 }).\
-where(students.c.id == addresses.c.st_id)
+where(studnts.c.id == addresses.c.st_id)
 with engine.connect() as conn:
     result=conn.execute(stmt)
     conn.commit()
