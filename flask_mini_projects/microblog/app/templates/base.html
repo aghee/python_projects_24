@@ -12,8 +12,14 @@
 <body>
     <b>Kenya's Blog</b> 
     <div>
-        <a href= '{{ url_for("index") }}'>HomePage</a><br>
+        Microblog:
+        <a href= '{{ url_for("index") }}'>Home</a>
+        {% if current_user.is_anonymous %}
         <a href='{{ url_for("login") }}'>Login</a>
+        {% else %}
+        <a href ='{{ url_for("user",username=current_user.username) }}'>Profile</a>
+        <a href='{{url_for("logout")}}'>Logout</a>
+        {% endif %}
     </div>
     {% with messages=get_flashed_messages() %}
     {% if messages %}
@@ -30,3 +36,4 @@
     {% block extra_test %}{% endblock %}
 </body>
 </html>
+
