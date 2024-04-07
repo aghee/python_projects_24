@@ -32,3 +32,18 @@ class EditProfileForm(FlaskForm):
     username=StringField('Username',validators=[DataRequired()])
     about_me=TextAreaField('About me',validators=[Length(min=10,max=150)])
     submit=SubmitField('Submit')
+
+    def __init__(self,orig_username,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self.orig_username=orig_username
+    
+    # def validate_username(self,username):
+    #     if username.data !=self.orig_username:
+    #         user=db.session.scalar(sa.select(User).where(User.username==username.data))
+    #         if user is not None:
+    #             raise ValidationError('You can only update about me details relating to yourself,not for another user! ')
+    #         elif user is None:
+    #             raise ValidationError('User does not exist! Confirm that the username is that of currently logged in user')
+        
+        
+        
